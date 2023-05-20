@@ -1,7 +1,6 @@
 package multiplymaxmin
 
 import (
-	"fmt"
 	"testing"
 )
 
