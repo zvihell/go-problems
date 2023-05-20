@@ -44,7 +44,7 @@ func Test_multiplyMaxMin(t *testing.T) {
 		if result == tc.expected {
 			println("✅ Тест «" + tc.name + "» пройден")
 		} else {
-			fmt.Printf("🤬 Тест «%v» провален, получено %v, ожидалось %v\n", tc.name, result, tc.expected)
+			t.Errorf("🤬 Тест «%v» провален, получено %v, ожидалось %v\n", tc.name, result, tc.expected)
 		}
 	}
 
