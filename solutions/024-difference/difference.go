@@ -7,12 +7,12 @@ func difference(a []int) int {
 	min := a[0]
 	max := a[0]
 	for _, item := range a {
-		if min < item {
+		if min > item {
 			min = item
 		}
-		if max > item {
+		if max < item {
 			max = item
 		}
 	}
-	return min - max
+	return max - min
 }
