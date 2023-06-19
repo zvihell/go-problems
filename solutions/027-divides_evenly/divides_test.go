@@ -1,6 +1,8 @@
 package dividesevenly
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestDivides(t *testing.T) {
 	testCases := []struct {
@@ -24,11 +26,22 @@ func TestDivides(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		println("Проверка теста " + tc.name + "..")
-		result := divides_evenly(tc.max, tc.min)
+		result, _ := divides_evenly(tc.max, tc.min)
 		if result == tc.expected {
 			println("✅ Тест «" + tc.name + "» пройден")
 		} else {
 			t.Errorf("🤬 Тест «%v» провален, получено %v, ожидалось %v\n", tc.name, result, tc.expected)
 		}
+
 	}
+}
+
+func TestDividesError(t *testing.T) {
+	_, err := divides_evenly(1, 0)
+	if err != nil {
+		println("✅ Тест «Проверка ошибки» пройден")
+	} else {
+		t.Errorf("🤬 Тест «Проверка ошибки»  провален")
+	}
+
 }
